@@ -1,0 +1,21 @@
+{% extends 'admin_base.html' %}
+{% block content %}
+    <div style="text-align: center; color:black;"><strong><h1> Welcome {{ details.1 }} {{ details.2 }} to Teacher Section !</h1></strong></div>
+        <h2>Details :-</h2>
+
+            <div class="row">
+                <div class="col-4">
+                    {% for col in columns %}
+                        <h2>{{ col.0 }}</h2>
+                    {% endfor %}
+                </div>
+                <div class="col-8">
+                    {% for col in details %}
+                        <h2>{{ col }}</h2>
+                    {% endfor %}
+                </div>
+            </div>
+    <h4>Students in your class:</h4>
+
+{% endblock %}
+

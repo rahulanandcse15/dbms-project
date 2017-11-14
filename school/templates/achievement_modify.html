@@ -1,0 +1,28 @@
+{% extends "admin_base.html" %}4
+
+
+{% block content %}
+    <table id="t01">
+    <tr>
+        <th>ID&nbsp &nbsp &nbsp &nbsp &nbsp</th>
+        <th>IMage&nbsp &nbsp &nbsp &nbsp &nbsp</th>
+        <th></th>
+    </tr>
+    {% for row in result     %}
+        <tr>
+            <th>{{ row.0 }}&nbsp &nbsp</th>
+            <th><img height="200" width="300" src="data:image/png;base64,{{ row.1 }}"></th>
+        <th> <form method="POST" action="/achievement_modify/" enctype="multipart/form-data">{% csrf_token %}
+            <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type ="hidden" value={{ row.0 }} name="id">
+            <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type = "hidden" value="NONE" name="id1">
+            <input type="hidden" style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" value={{ table }} name="table">
+            <input type="submit" value = "modify" style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" name="action">
+            {% if table != "LOGIN" %}
+            <input type="submit" value = "delete" style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" name="action"></form></th>
+            {% endif %}
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
+
+

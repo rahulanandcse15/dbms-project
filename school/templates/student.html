@@ -1,0 +1,38 @@
+{% extends 'admin_base.html' %}
+{% block content %}
+    <div style="text-align: center; color:black;"><strong><h1> Welcome {{ details.1 }} {{ details.2 }} to student Section !</h1></strong></div>
+        <h2>Details :-</h2>
+
+            <div class="row">
+                <div class="col-4">
+                    {% for col in columns %}
+                        <h2>{{ col.0 }}</h2>
+                    {% endfor %}
+                </div>
+                <div class="col-8">
+                    {% for col in details %}
+                        <h2>{{ col }}</h2>
+                    {% endfor %}
+                </div>
+            </div> 
+    <div class="row">
+        <div class="col-6">
+            <h2>Your Attendence Details :</h2>
+            <h2>PRESENT &nbsp &nbsp &nbsp TOTAL CLASS</h2>
+            {% for subject in attendence %}
+                <h2>{{ subject.0 }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp {{ subject.1 }}</h2>
+            {% endfor %}
+        </div>
+
+        <div class="col-6">
+            <h2>Your Reports :</h2>
+            <h2>SUBJECT_ID &nbsp &nbsp &nbsp Max Marks &nbsp &nbsp &nbsp Marks Obtained &nbsp &nbsp &nbsp Exam detail </h2>
+            {% for col in report %}
+                <h2>&nbsp &nbsp &nbsp{{ col.0 }}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{ col.1 }}&nbsp &nbsp &nbsp &nbsp &nbsp
+                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{ col.2 }} &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp{{ col.3 }} </h2>
+            {% endfor %}
+        </div>
+
+    </div> 
+{% endblock %}
+

@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>admin home</title>
+		<link rel="stylesheet" href = "../../static/home.css" type="text/css">
+	</head>
+	<body>
+		<div id = "top">
+            </br>
+            <form method="POST" action={% url 'logout' %} style="float: right;">
+                {% csrf_token %}
+                <input style="background-color: #03274B;color: #ffffff;width: 100px ;height: 40px;border:None;font-size: 16px;"type="submit" value="Logout">
+            </form>
+        </div>
+		<div class = logo>
+			<a href="../../"><img src="../../static/images/logo.jpg" style="width: 100%;height: auto"></a>
+		</div>
+		<div id = top></br></div>
+        {% block content %}
+
+        {% endblock %}
+            <div class="row" style="position:relative;width:100%;margin:0">
+        <div class="col-1" style="background-color:#03274B;"></br></br></br></br></br></br></br></br></br></br></br></br></div>
+        <div class="col-4" style="margin:0;padding:0;background-color:#03274B;color:#F8F8F2;list-style:none;">
+        <h2>Veena Bharti High School</h2>
+            <address>
+              Manas parivartan,<br />
+              poreyahat,<br />
+              Dist: Godda<br />
+              Pin: 814153
+             </address>
+            <ul style="margin:0;padding:0;border:0;">
+                </br>
+                <li style="list-style:none;"><strong>Tel:</strong> 9889419676</li>
+                <li style="list-style:none;"><strong>Email:</strong> <a style="padding:0;" href="#">veenabharti.por@gmail.com</a></li>
+             </ul>
+             </br></br></br>
+        </div>
+        <div class="col-3" style="margin:0;padding:0;background-color:#03274B;color:#F8F8F2;list-style:none;">
+        <h2>Administration</h2>
+              <ul style="margin:0;padding:0;border:0;">
+                <li style="list-style:none"><a style="padding:0;" href="#">Disclaimer</a></li>
+                <li style="list-style:none;"><a style="padding:0;" href="#">Accessibility</a></li>
+                <li style="list-style:none;"><a style="padding:0;" href="#">Freedom of Information</a></li>
+                <li style="list-style:none;"><a style="padding:0;" href="#">Website Privacy</a></li>
+                <li style="list-style:none;"><a style="padding:0;" href="#">Press Release Information</a></li>
+                <li style="list-style:none;"><a style="padding:0;" href="#">Annual Report</a></li>
+                <li style="list-style:none;"><a style="padding:0;" href="#">Financial Statements</a></li>
+                <li style="list-style:none;"><a style="padding:0;" href="#">Job Vacancies</a></li>
+                <li style="list-style:none;"><a style="padding:0;" href="#">Semester Dates</a></li>
+              </ul>
+              </br>
+        </div>
+        <div class="col-3" style="margin:0;padding:0;background-color:#03274B;color:#F8F8F2;list-style:none;">
+        <h2>Administration</h2>
+              <ul style="margin:0;padding:0;border:0;">
+                <li style="list-style:none"><a style="padding:0;" href="#">Disclaimer</a></li>
+                <li style="list-style:none;"><a style="padding:0;" href="#">Accessibility</a></li>
+                <li style="list-style:none;"><a style="padding:0;" href="#">Freedom of Information</a></li>
+                <li style="list-style:none;"><a style="padding:0;" href="#">Website Privacy</a></li>
+                <li style="list-style:none;"><a style="padding:0;" href="#">Press Release Information</a></li>
+                <li style="list-style:none;"><a style="padding:0;" href="#">Annual Report</a></li>
+                <li style="list-style:none;"><a style="padding:0;" href="#">Financial Statements</a></li>
+                <li style="list-style:none;"><a style="padding:0;" href="#">Job Vacancies</a></li>
+                <li style="list-style:none;"><a style="padding:0;" href="#">Semester Dates</a></li>
+              </ul>
+              </br>
+        </div>
+        <div class="col-1" style="background-color:#03274B;"></br></br></br></br></br></br></br></br></br></br></br></br></div>
+        </div>
+
+	</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+    <div>
+        <form method="POST" action="/add_galary/" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2>Event :<sub style="color: red;">*</sub><input type="text" name="event" placeholder="event name" size="100" required></h2>
+            <h2>Image :<sub style="color: red;">*</sub><input type="file" name="image"></h2>
+            {% if not modify %}
+                <input type="submit" VALUE="Submit" name="action" style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;">
+                <input type="reset" VALUE="Reset" style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;">
+            {% endif %}
+            {% if modify %}
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="hidden" value="CLASS" name="table">
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" VALUE="Modify" name="action">
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

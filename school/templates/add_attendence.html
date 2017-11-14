@@ -1,0 +1,27 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+    <div>
+        <form method="POST" action="./../add_attendence/">
+            {% csrf_token %}
+            <h2>Student Id :<sub style="color: red;">*</sub>
+                <select style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" name="sid" required>
+                    {% for student in students %}
+                    <option value={{student.0}}>{{student.1}} &nbsp {{student.2}} &nbsp {{student.3}} &nbsp {{student.4}}</option>
+                    {% endfor %}
+                </select>
+            </h2>
+            <h2>Year :<sub style="color: red;">*</sub><input type="number" name="Year" style="height: 30px;" size="60"required></h2>
+            <h2>No Of Days Present :<sub style="color: red;">*</sub><input type="number" style="height: 30px;" name="present" size="60" required></h2>
+            <h2>Total No Of Class :<sub style="color: red;">*</sub><input type="number" style="height: 30px;" name="total" size="60" required></h2>
+            {% if not modify %}
+                <input  type="submit" style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" VALUE="Submit" name="action">
+                <input type="reset" style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" VALUE="Reset">
+            {% endif %}
+            {% if modify %}
+                <input type="hidden" value="ATTENDENCE" name="table">
+                <input type="submit" style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" VALUE="Modify" name="action">
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

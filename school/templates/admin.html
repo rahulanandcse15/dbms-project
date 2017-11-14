@@ -1,0 +1,235 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+    <div><h1 style="text-align: center;color: #03274B;margin-bottom: 0px;">HELLO ADMIN !</h1></div>
+    <div class="row">
+        <div class="col-6">
+            <form action="/student/" method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center;"><strong>STUDENT</strong></h1>
+                <fieldset>
+                <legend> </legend>
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" name="action"type="submit" value="ADD" name="action">
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" name = "action"value="MODIFY" name="action">
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="col-6">
+            <form action="/teacher/" method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center;"><strong>TEACHER</strong></h1>
+                <fieldset>
+                <legend> </legend>
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="ADD" name="action">
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="MODIFY" name="action">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <form action="/employee/" method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center;"><strong>EMPLOYEE</strong></h1>
+                <fieldset>
+                <legend> </legend>
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="ADD" name="action">
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="MODIFY" name="action">
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="col-6">
+            <form action="/class/" method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center;"><strong>CLASS</strong></h1>
+                <fieldset>
+                <legend> </legend>
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="ADD" name="action">
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="MODIFY" name="action">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-6">
+            <form action="/cr/" method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center;"><strong>CLASS REPRESENTATITIVE</strong></h1>
+                <fieldset>
+                <legend> </legend>
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="ADD" name="action">
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="MODIFY" name="action">
+
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="col-6">
+            <form action="/notice/" method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center;"><strong>NOTICE</strong></h1>
+                <fieldset>
+                <legend> </legend>
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="ADD" name="action">
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="MODIFY" name="action">
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <form action="/subject/" method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center;"><strong>SUBJECT</strong></h1>
+                <fieldset>
+                <legend> </legend>
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="ADD" name="action">
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="MODIFY" name="action">
+
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="col-6">
+            <form action="/report/" method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center;"><strong>REPORT</strong></h1>
+                <fieldset>
+                <legend> </legend>
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="ADD" name="action">
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="MODIFY" name="action">
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <form action="/receipt/" method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center;"><strong>RECEIPT</strong></h1>
+                <fieldset>
+                <legend> </legend>
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="ADD" name="action">
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="MODIFY" name="action">
+
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="col-6">
+            <form action="/principal/" method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center;"><strong>PRINCIPAL</strong></h1>
+                <fieldset>
+                <legend> </legend>
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="ADD" name="action">
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="MODIFY" name="action">
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <form action="/lab/" method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center;"><strong>LAB</strong></h1>
+                <fieldset>
+                <legend> </legend>
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="ADD" name="action">
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="MODIFY" name="action">
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="col-6">
+            <form action="/attendence/" method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center;"><strong>ATTENDENCE</strong></h1>
+                <fieldset>
+                <legend> </legend>
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="ADD" name="action">
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="MODIFY" name="action">
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <form action="/picture/" method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center;"><strong>ALBUM</strong></h1>
+                <fieldset>
+                <legend> </legend>
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="ADD" name="action">
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="MODIFY" name="action">
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-6">
+            <form action="/new_user/" method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center;"><strong>USER ACCOUNT</strong></h1>
+                <fieldset>
+                <legend> </legend>
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="ADD" name="action">
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="MODIFY" name="action">
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <form action="/marquee/" method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center;"><strong>FLASH MESSAGE</strong></h1>
+                <fieldset>
+                <legend> </legend>
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="ADD" name="action">
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="MODIFY" name="action">
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="col-6">
+                <form action="/achievement/" method="POST">
+                    {% csrf_token %}
+                    <h1 style="text-align: center;"><strong>ACHIEVEMENT</strong></h1>
+                    <fieldset>
+                    <legend> </legend>
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="ADD" name="action">
+                        <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="MODIFY" name="action">
+                    </fieldset>
+                </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <form action="/events/" method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center;"><strong>LATEST HAPPENING</strong></h1>
+                <fieldset>
+                <legend> </legend>
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="ADD" name="action">
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="MODIFY" name="action">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

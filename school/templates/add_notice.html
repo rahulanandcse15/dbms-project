@@ -1,0 +1,22 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+    <div>
+         <form method="POST" action="./../add_notice/">
+            {% csrf_token %}
+            <h2>Title :<sub style="color: red;">*</sub><input type="text" name="title" required></h2>
+            <h2>Notice Body :<sub style="color: red;">*</sub><textarea name="body" rows="20" cols="60" required></textarea></h2>
+            <h2>Isssuer :<sub style="color: red;">*</sub><input type="text" name="issuer" required></h2>
+            <h2>Date :<sub style="color: red;">*</sub><input type="date" name="notice_date" required></h2>
+            <h2>Designation :<sub style="color: red;">*</sub><input type="text" name="designation" required></h2>
+            {% if not modify %}
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" VALUE="Submit" name="action">
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="reset" VALUE="Reset">
+            {% endif %}
+            {% if modify %}
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="hidden" value="NOTICE" name="table">
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" VALUE="Modify" name="action">
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

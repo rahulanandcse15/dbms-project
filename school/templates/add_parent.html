@@ -1,0 +1,26 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+    <div>
+            <form method="POST" action="./../add_parent/">
+            {% csrf_token %}
+            <h2>First Name :<sub style="color: red;">*</sub><input type="text" name="fname" required></h2>
+            <h2>Last Name :<sub style="color: red;">*</sub><input type="text" name="lname" required></h2>
+            <h2>Gender :<sub style="color: red;">*</sub><input type="radio" name="gender" value="m" checked>Male
+                <input type="radio" name="gender" value="f">Female</h2>
+            <h2>Primary Contact:<sub style="color: red;">*</sub>
+            <input type="text" name= "p_contact" required></h2>
+            <h2>Secondary Contact:
+            <input type="text" name= "sec_contact"></h2>
+            <h2>Email-id :<sub style="color: red;">*</sub><input type="email" name="email_id" required></h2>
+            {% if not modify %}
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" VALUE="Submit" name="action">
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="reset" VALUE="Reset">
+            {% endif %}
+            {% if modify %}
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="hidden" value="PARENT" name="table">
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" VALUE="Modify" name="action">
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

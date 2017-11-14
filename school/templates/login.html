@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="row" style="background-color: #03274B;color: white">
+    <div class="col-1"></div>
+    <div class="col-5">
+        <form method="post" action="/auser/">
+            {% csrf_token %}
+            <h2>Admin Login Here</h2>
+            <fieldset>
+                <legend></legend>
+                <label for = "teachername">
+                    {% if aerror %}
+                        <p style="color: #ff0000;margin:0;border: 0;padding: 0;"><strong> wrong credentials entered !</strong></p>
+                    {% endif %}
+                    Username:</br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                    <input type="text"  style="height: 30px;" placeholder="User Name" name="ausername" size="40" >
+                </label></br>
+                <label for= "teacherpass">
+                    Password:</br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                    <input type="password" style="height: 30px;" placeholder="Password" name="apassword" size="40">
+                </label></br>
+                </br><input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="Login">
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="reset" value="Reset">
+            </fieldset>
+        </form>
+    </div>
+    <!-- div class="col-3">
+        <form method="post" action="./euser">
+            <{% csrf_token %}>
+            <h2>Employe Login Here</h2>
+            <fieldset>
+                <legend>Employee Login form</legend>
+                <label for = "employeename">
+                    <{% if eerror %}>
+                        <p style="color: #ff0000;margin:0;border: 0;padding: 0;"><strong> wrong credentials entered !</strong></p>
+                    <{% endif %}>
+                    Username:</br>
+                    <input type="text" placeholder="User Name" name="eusername">
+                </label></br>
+                <label for= "employeepass">
+                    Password:</br>
+                    <input type="password" placeholder="Password" name="epassword"></br>
+                    <input type="submit" value="Login">
+                    <input type="reset" value="Reset">
+                </label>
+            </fieldset>
+        </form>
+    </div -->
+    <div class="col-5">
+        <form method="post" action="/suser/">
+            {% csrf_token %}
+            <h2>Student Login Here</h2>
+            <fieldset>
+                <legend></legend>
+                <label for = "studentname">
+                    {% if serror %}
+                        <p style="color: #ff0000;margin:0;border: 0;padding: 0;"><strong> wrong credentials entered !</strong></p>
+                    {% endif %}
+                    Username:</br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                    <input type="text" placeholder="User Name" style="height: 30px;" name="susername" size="40">
+                </label>
+            </br>
+                <for ="studentpass">
+                    Password:</br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                    <input type="password" placeholder="Password" style="height: 30px;" name="spassword" size="40"></br>
+                    </br><input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" value="Login">
+                    <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="reset" value="Reset">
+                </label>
+            </fieldset>
+        </form>
+    </div>
+</div></br>
+
+{% endblock %}

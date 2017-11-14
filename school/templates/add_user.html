@@ -1,0 +1,19 @@
+{% extends 'admin_base.html' %}
+{% block content %}
+    <div>
+        <form method="POST" action="./../add_user/">
+            {% csrf_token %}
+            <h2>Userame :<sub style="color: red;">*</sub><input type="text" name="username" required></h2>
+            <h2>Password :<input type="password" name="password"></h2>
+            <h2>Type :<sub style="color: red;">*</sub><input type="number" name="type" required></h2>
+            {% if not modify %}
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" VALUE="Submit" name="action">
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="reset" VALUE="Reset">
+            {% endif %}
+            {% if modify %}
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="hidden" value="LOGIN" name="table">
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" VALUE="Modify" name="action">
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

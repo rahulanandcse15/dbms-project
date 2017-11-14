@@ -1,0 +1,28 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+    <div>
+        <form method="POST" action="/add_class/">
+            {% csrf_token %}
+            <h2>House :<sub style="color: red;">*</sub><input type="text" name="house" placeholder="building name" required></h2>
+            <h2>Room No:<sub style="color: red;">*</sub><input type="number" name="room_no" placeholder="room no" required></h2>
+            <h2>Number Of Boys :<sub style="color: red;">*</sub><input type="number" name="boys" required></h2>
+            <h2>Number Of Girls :<sub style="color: red;">*</sub><input type="number" name="girls" required></h2>
+            <h2>Class Teacher Id:<sub style="color: red;">*</sub>
+                <select style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" name="tid" required>
+                    {% for teacher in teachers  %}
+                    <option value={{teacher.0}}>{{teacher.0}} {{teacher.1}} {{teacher.2}}</option>
+                    {% endfor %}
+                </select>
+            </h2>
+             {% if not modify %}
+                <input type="submit" VALUE="Submit" name="action" style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;">
+                <input type="reset" VALUE="Reset" style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;">
+            {% endif %}
+            {% if modify %}
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="hidden" value="CLASS" name="table">
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" VALUE="Modify" name="action">
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

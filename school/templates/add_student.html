@@ -1,0 +1,50 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+    <div>
+        <form method="POST" action="./../add_student/">
+            {% csrf_token %}
+            {% if not modify %}
+            <h2>Id :<sub style="color: red;">*</sub><input type="number" name="id" required></h2>
+            {% endif %}
+            <h2>First Name :<sub style="color: red;">*</sub><input type="text" name="fname" required></h2>
+            <h2>Last Name :<sub style="color: red;">*</sub><input type="text" name="lname" required></h2>
+            <h2>Roll Number :<sub style="color: red;">*</sub><input type="number" name="roll" required></h2>
+            <h2>Class Id :<sub style="color: red;">*</sub>
+                <select name="cid" style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" required>
+                    {% for class in classes %}
+                    <option value={{class.0}}>{{ class.0 }}</option>
+                    {% endfor %}
+                </select></h2>
+            <h2>Date Of Joining :<sub style="color: red;">*</sub><input type="date" name="doj" required></h2>
+            <h2>Gender :<sub style="color: red;">*</sub><input type="radio" name="gender" value="m" checked>Male
+                <input type="radio" name="gender" value="f">Female</h2>
+            <h2>Birth date :<sub style="color: red;">*</sub><input type="date" name="dob" required></h2>
+            <h2>Primary Contact:<sub style="color: red;">*</sub>
+            <input type="text" name= "p_contact" required></h2>
+            <h2>Secondary Contact:
+            <input type="text" name= "sec_contact"></h2>
+            <h2>Address Details :-</br>Place :<sub style="color: red;">*</sub>
+            <input type="text" name= "place" placeholder="your locality" required></h2>
+            <h2>Town :<sub style="color: red;">*</sub>
+            <input type="text" name= "district" required></h2>
+            <h2>State :<sub style="color: red;">*</sub><input type="text" name= "state" required></h2>
+            <h2>Pincode :<sub style="color: red;">*</sub><input type="number" name="pincode" required></h2>
+            {% if not modify %}
+            <h2>Login_id :<sub style="color: red;">*</sub>
+                <select style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" name="ids" required>
+                    {%for id in ids %}
+                        <option value={{ id.0 }}>{{ id.0 }} &nbsp {{ id.1 }} </option>
+                    {% endfor %}
+                </select>
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" VALUE="Submit" name="action">
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="reset" VALUE="Reset">
+            {% endif %}
+            {% if modify %}
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="hidden" value="STUDENT" name="table">
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" VALUE="Modify" name="action">
+            {% endif %}
+        </form>
+    </div>
+
+{% endblock %}

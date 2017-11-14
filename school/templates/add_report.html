@@ -1,0 +1,37 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+    <div>
+        <form method="POST" action="./../add_report/">
+            {% csrf_token %}
+            <h2>Student Id :<sub style="color: red;">*</sub>
+                <select style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" name="sid" required>
+                    {% for student in students %}
+                    <option value={{student.0}}>{{student.1}} &nbsp {{student.2}} &nbsp {{student.3}} &nbsp {{student.4}}</option>
+                    {% endfor %}
+                </select>
+            </h2>
+            <h2>Subject Id :<sub style="color: red;">*</sub>
+                <select name="subject_id" style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" required>
+                    {% for subject in subjects %}
+                    <option value={{subject.0}}>{{subject.0}} &nbsp {{subject.2}}</option>
+                    {% endfor %}
+                </select>
+            </h2>
+            <h2>Maximum Marks :<sub style="color: red;">*</sub><input type="number" name="maxx_marks" min="0" required></h2>
+            <h2>Marks Obtained :<sub style="color: red;">*</sub><input type="number" name="marks_obtained" required></h2>
+            <h2>Year :<sub style="color: red;">*</sub><input type="number" name="year" required></h2>
+            <h2>Exam Type :<sub style="color: red;">*</sub><input type="radio" name="exam" value="FIRST_UNIT" checked>First Unit
+                <input type="radio" name="exam" value="SECOND_UNIT">Second Unit
+                <input type="radio" name="exam" value="FINAL">Final</h2>
+            {% if not modify %}
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" VALUE="Submit" name="action">
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="reset" VALUE="Reset">
+            {% endif %}
+            {% if modify %}
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="hidden" value="REPORT" name="table">
+                <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" VALUE="Modify" name="action">
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

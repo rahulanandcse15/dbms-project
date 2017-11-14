@@ -1,0 +1,29 @@
+{% extends "admin_base.html" %}
+
+
+{% block content %}
+    <table id="t01">
+    <tr>
+    {% for row in result1 %}
+        <th>{{ row.0 }}&nbsp &nbsp</th>
+    {% endfor %}
+        <th></th>
+    </tr>
+    {% for row in result     %}
+        <tr>
+        {% for column in row %}
+            <th>{{ column }}&nbsp &nbsp</th>
+        {% endfor %}
+        <th> <form method="POST" action="/table_modify/" enctype="multipart/form-data">{% csrf_token %}
+            
+            <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type ="hidden" value={{ row.0 }} name="id">
+            <input style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type = "hidden" value={{ row.1 }} name="id1">
+            <input type="hidden" style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" value={{ table }} name="table">
+            <input type="submit" value = "modify" style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" name="action">
+            <input type="submit" value = "delete" style="background-color: green;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" name="action"></form></th>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
+
+

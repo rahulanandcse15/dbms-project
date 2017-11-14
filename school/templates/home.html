@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="row">
+	<div class="col-9 boxed scroll">
+		<h2 style="color:#03274B ;">OUR VISION</h2>
+		<p>Our Vision is to see beyond the narrow walls of the classrooms and textbooks and promote out of the box thinking to empower every student to master the challenges of today and shape the worlds of tomorrow.We believe that both teachers and parents play an important role in the growth and development of children and it is only through open communication , fruitful discussion that we can together lay a strong foundation for our children. .</br> 
+		To be in sync with the world that has become a global village and to be in tune with the world we have integrated our teaching with the latest technology and have made the entire teaching-learning experience more effective and enjoyable.</br>
+		All classes from Nursery to XII are technologically equipped.Technological tools impact teaching , learning and assesment which profoundly influence the learning cycles through digital learning systems.Digital portfolios of our students enable greater understanding of each student's learning needs.There are considerable digit project works to enable children to stay focused on the work place of the future .The school has the best team of academia who are passionately dedicated to the constant up-gradation of the curriculum</p>
+		<h2 style="color:#03274B;">OUR MISSION</h2>
+		<p>The school with its motto "Service before Self" has been serving the society in the field of education. Today it stands as a 'Repository of learning' and a patron of 'Quality Consciousness' devoted to fostering knowledge, self-discovery, human dignity and integrity. Distinction and diversity is the twin hallmarks of the school philosophy; educational leadership and scholarly achievement its mission. The school imparts holistic and quality education characterized by thoroughness, high principles and a freedom, that help the students to grow in responsibility, self-reliance and the ability to make wise decisions. The pursuit of excellence according to each one's potential with emphasis on learning by doing is of paramount importance. It rests on the positive belief that every person has it in him/her to become productive in creating global citizens. Global partnerships are an area into which the school is enthusiastically ventured into, adding an international dimension to the school curriculum.</br> "Intercultural dialogue is the best guarantee to peace." Global school partnerships are a dynamic and exciting approach to global citizenship. In the process of achieving global standards and building future leaders, the school (DPS, B.S. City) has added an International dimension in its curriculum by forging work links with schools abroad. Learning has become even more relevant and exciting for the student in Veena bharti.</p>
+	</div>
+	<div class="col-3 boxed scroll" >
+        <h1 style="text-align:center; border:0px; margin:0px">Notice</h1>
+        {% for notice in notices %}
+		<div class="card">
+			<h2 style="color: red;">{{ notice.1 }}</h2>
+			<p>{{ notice.2 }}</p>
+            <strong style="color: darkblue;">Posted by {{ notice.3 }}({{ notice.5 }})</strong>
+		</div>
+        {% endfor %}
+	</div>
+</div>
+
+<div class="row">
+
+    <div class="col-4 boxed scroll">
+    <div class="col-6"><img style="width: 100%;height=100%;" src="./../static/images/founder.jpg"></div>
+        Learning beyond Classroom” is the hallmark of the school educational system. So, to achieve this, educational tours are regularly organised by the school to promote national and international understanding. Tours of national importance are being organised to develop understanding of our cultural heritage camping expeditions, picnics, visit to world heritage sites are also organized.
+        Every few hundreds years………… there occurs a sharp transformation. Within decades, society-its worldview, its basic values, its social and political structures, its arts, its key institutions rearranges itself. And the people born then cannot imagine a world in which their grandparents lived and into which their own parents were born. We are currently living through such a transformation.
+        <form action="/founder_message/" method="POST">{% csrf_token %}
+            <center><input style="background-color: #03274B;color: white; height: 40px; width: 100px;border: none;font-size: 16px;" type="submit" VALUE="View More" name="action"></center>
+        </form>
+    </div>
+
+
+    <div class="col-4 boxed scroll">
+        <h2 style="color:#03274B ;text-align: center;">Latest Happening</h2>
+        <div class="w3-content w3-section" style="max-width: 500px;px">
+            {% for event in events %}
+                <img class="mySlides1" src="data:image/png;base64,{{ event.1 }}" style="width:100%">
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="col-4 boxed scroll"><h2 style="color:#03274B ;text-align: center">Achivements</h2>
+    <div class="w3-content w3-section" style="max-width: 500px;px">
+        {% for acheivement in acheivements %}
+            <img class="mySlides" src="data:image/png;base64,{{ acheivement.1 }}" style="width:100%">
+        {% endfor %}
+    </div>
+    </div>
+</div>
+
+
+
+<!-- h2 style="text-align:center">Some Renowed Faculty</h2>
+<div clas="row"style="background-color:#000000;">
+	<div class="card col-2">
+	  <img src="../static/images/team2.jpg" alt="John" style="width:100%">
+	  <h1>John Doe</h1>
+	  <p class="title">CEO & Founder, Example</p>
+	  <p>Harvard University</p>
+	  <div style="margin: 24px 0;">
+		<a href="#"><i class="fa fa-dribbble"></i></a> 
+		<a href="#"><i class="fa fa-twitter"></i></a>  
+		<a href="#"><i class="fa fa-linkedin"></i></a>  
+		<a href="#"><i class="fa fa-facebook"></i></a> 
+	 </div>
+	 <p><button>Contact</button></p>
+	</div>
+	<div class="card col-2">
+	  <img src="../static/images/team2.jpg" alt="John" style="width:100%">
+	  <h1>John Doe</h1>
+	  <p class="title">CEO & Founder, Example</p>
+	  <p>Harvard University</p>
+	  <div style="margin: 24px 0;">
+		<a href="#"><i class="fa fa-dribbble"></i></a> 
+		<a href="#"><i class="fa fa-twitter"></i></a>  
+		<a href="#"><i class="fa fa-linkedin"></i></a>  
+		<a href="#"><i class="fa fa-facebook"></i></a> 
+	 </div>
+	 <p><button>Contact</button></p>
+	</div>
+	<div class="card col-2">
+	  <img src="../static/images/team2.jpg" alt="John" style="width:100%">
+	  <h1>John Doe</h1>
+	  <p class="title">CEO & Founder, Example</p>
+	  <p>Harvard University</p>
+	  <div style="margin: 24px 0;">
+		<a href="#"><i class="fa fa-dribbble"></i></a> 
+		<a href="#"><i class="fa fa-twitter"></i></a>  
+		<a href="#"><i class="fa fa-linkedin"></i></a>  
+		<a href="#"><i class="fa fa-facebook"></i></a> 
+	 </div>
+	 <p><button>Contact</button></p>
+	</div>
+	<div class="card col-2">
+	  <img src="../static/images/team2.jpg" alt="John" style="width:100%">
+	  <h1>John Doe</h1>
+	  <p class="title">CEO & Founder, Example</p>
+	  <p>Harvard University</p>
+	  <div style="margin: 24px 0;">
+		<a href="#"><i class="fa fa-dribbble"></i></a> 
+		<a href="#"><i class="fa fa-twitter"></i></a>  
+		<a href="#"><i class="fa fa-linkedin"></i></a>  
+		<a href="#"><i class="fa fa-facebook"></i></a> 
+	 </div>
+	 <p><button>Contact</button></p>
+	</div>
+	<div class="card col-2">
+	  <img src="../static/images/team2.jpg" alt="John" style="width:100%">
+	  <h1>John Doe</h1>
+	  <p class="title">CEO & Founder, Example</p>
+	  <p>Harvard University</p>
+	  <div style="margin: 24px 0;">
+		<a href="#"><i class="fa fa-dribbble"></i></a> 
+		<a href="#"><i class="fa fa-twitter"></i></a>  
+		<a href="#"><i class="fa fa-linkedin"></i></a>  
+		<a href="#"><i class="fa fa-facebook"></i></a> 
+	 </div>
+	 <p><button>Contact</button></p>
+	</div>
+	<div class="card col-2">
+	  <img src="../static/images/team2.jpg" alt="John" style="width:100%">
+	  <h1>John Doe</h1>
+	  <p class="title">CEO & Founder, Example</p>
+	  <p>Harvard University</p>
+	  <div style="margin: 24px 0;">
+		<a href="#"><i class="fa fa-dribbble"></i></a> 
+		<a href="#"><i class="fa fa-twitter"></i></a>  
+		<a href="#"><i class="fa fa-linkedin"></i></a>  
+		<a href="#"><i class="fa fa-facebook"></i></a> 
+	 </div>
+	 <p><button>Contact</button></p>
+	</div>
+</div -->
+
+
+
+{% endblock %}
